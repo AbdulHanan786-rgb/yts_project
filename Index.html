@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>yts_project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="w-100%">
+
+    <div>
+
+        <!-- hearder -->
+        <div class="bg-black h-16 flex items-center fixed top-0 left-0 w-full z-50">
+
+            <img src="./image/yts-image.svg" class="p-4 ml-8">
+
+            <div class="w-[400px] h-10 rounded-full border-2 border-skin-800 ml-40">
+                <input type="text" placeholder="Search"
+                    class="w-full h-full px-4 bg-transparent text-white outline-none">
+            </div>
+
+            <a class="text-white hover:text-green-400 transition  font-bold ml-10" href="#">
+                Home
+            </a>
+
+            <a class="text-green-500 font-bold ml-10" href="#">
+                4K
+            </a>
+
+            <a class="text-white hover:text-green-400 transition font-bold  ml-10" href="#">
+                Browse Movies
+            </a>
+
+            <a class="text-slate-300 hover:text-white font-bold  ml-10" href="#">
+                Login
+            </a>
+            <span class="text-white mt-4 ml-4">|</span><br>
+
+            <a class="text-slate-300 hover:text-white font-bold ml-4" href="#">
+                Register
+            </a>
+
+        </div>
+
+
+        <!-- Serach bar -->
+        <div class="w-full h-[350px] bg-black flex flex-col justify-center items-center mt-16">
+
+            <p class="text-white w-[890px] text-xl mb-2 font-bold">
+                Search Terms on YTS:
+            </p>
+            <div class="w-[900px] h-12 flex gap-4 ">
+
+                <input type="text" id="searchInput"
+                    class="text flex-1 min-w-0 h-full bg-white border border-green-600 focus:ring-2 focus:ring-green-500 outline-none rounded-lg outline-none px-3 text-black">
+
+                <button id="searchBtn"
+                    class="bg-[#6ac045] hover:bg-green-400 w-[90px] h-12 shrink-0 text-white font-bold text-xl rounded-md">
+                    Search
+                </button>
+
+            </div>
+
+
+            <div class="flex gap-8 mt-5">
+
+
+                <div>
+                    <p class="text-white font-bold">Quality</p>
+
+                    <select id="quality"
+                        class="bg-black w-36 h-10 mt-4 text-white border-2 border-green-600 rounded-lg">
+
+                        <option value="">All Qualities</option>
+                        <option value="480p">480p</option>
+                        <option value="720p">720p</option>
+                        <option value="1080p">1080p</option>
+                        <option value="1080p.x265">1080p.x265</option>
+                        <option value="2160p">2160p</option>
+                        <option value="3D">3D</option>
+                    </select>
+                </div>
+
+
+                <div>
+                    <p class="text-white font-bold">Genre</p>
+                    <select id="genre"
+                        class="bg-black w-36 h-10 mt-4 flex items-center text-white  border-2 border-green-600 rounded-lg">
+                        <option value="" class="bg-gray-900 text-white">
+                            All Genres
+                        </option>
+
+                        <option value="Comedy" class="bg-gray-900 text-white">
+                            Comedy
+                        </option>
+
+                        <option value="Drama" class="bg-gray-900 text-white">
+                            Drama
+                        </option>
+
+                        <option value="Action" class="bg-gray-900 text-white">
+                            Action
+                        </option>
+
+                        <option value="Horror" class="bg-gray-900 text-white">
+                            Horror
+                        </option>
+                    </select>
+                </div>
+
+
+
+                <div>
+                    <p class="text-white font-bold">Rating</p>
+                    <select id="rating"
+                        class="bg-black w-36 h-10 mt-4 flex items-center text-white  border-2 border-green-600 rounded-lg">
+                        <option value="" class="bg-black text-white">All Rating</option>
+                        <option value="9" class="bg-black text-white">9+</option>
+                        <option value="8" class="bg-black text-white">8+</option>
+                        <option value="7" class="bg-black text-white">7+</option>
+                        <option value="6" class="bg-black text-white">6+</option>
+                        <option value="5" class="bg-black text-white">5+</option>
+                        <option value="4" class="bg-black text-white">4+</option>
+                        <option value="3" class="bg-black text-white">3+</option>
+                        <option value="2" class="bg-black text-white">2+</option>
+                        <option value="1" class="bg-black text-white">1+</option>
+                    </select>
+                </div>
+
+
+
+
+
+                <div>
+                    <p class="text-white font-bold">Year:</p>
+
+                    <select id="year"
+                        class="bg-black w-36 h-10 mt-4 px-3 text-white border-2 border-green-600 rounded-lg outline-none cursor-pointer">
+                        <option value="" class="bg-black text-white">All Years</option>
+                        <option value="2026" class="bg-black text-white">2026</option>
+                        <option value="2025" class="bg-black text-white">2025</option>
+                        <option value="2020-now" class="bg-black text-white">2020-now</option>
+                        <option value="2010-now" class="bg-black text-white">2010-now</option>
+                        <option value="2010-2019" class="bg-black text-white">2010-2019</option>
+                        <option value="2000-2009" class="bg-black text-white">2000-2009</option>
+                        <option value="1990-1999" class="bg-black text-white">1990-1999</option>
+                        <option value="1980-1989" class="bg-black text-white">1980-1989</option>
+                        <option value="1970-1979" class="bg-black text-white">1970-1979</option>
+                        <option value="1950-1969" class="bg-black text-white">1950-1969</option>
+                        <option value="1900-1949" class="bg-black text-white">1900-1949</option>
+                    </select>
+                </div>
+
+
+
+
+
+
+                <div>
+                    <label for="language" class="block text-white font-bold mb-4">
+                        Language:
+                    </label>
+
+                    <select id="language"
+                        class="bg-black w-44 h-10 px-3 text-white border-2 border-green-600 rounded-lg">
+                        <option value="">All Languages</option>
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                        <option value="ja">Japanese</option>
+                        <option value="ko">Korean</option>
+                        <option value="fr">French</option>
+                        <option value="es">Spanish</option>
+                        <option value="zh">Chinese</option>
+                        <option value="de">German</option>
+                        <option value="it">Italian</option>
+                        <option value="ru">Russian</option>
+                        <option value="ur">Urdu</option>
+                    </select>
+                </div>
+
+
+
+
+
+                <div>
+                    <p class="text-white font-bold">Order By:</p>
+
+                    <select id="orderBy"
+                        class="bg-black w-36 h-10 mt-4 px-3 text-white font-bold border-2 border-green-600 rounded-lg outline-none cursor-pointer">
+                        <option value="latest" class="bg-black text-white">Latest</option>
+                        <option value="oldest" class="bg-black text-white">Oldest</option>
+                        <option value="featured" class="bg-black text-white">Featured</option>
+                        <option value="seeds" class="bg-black text-white">Seeds</option>
+                        <option value="peers" class="bg-black text-white">Peers</option>
+                        <option value="year" class="bg-black text-white">Year</option>
+                        <option value="rating" class="bg-black text-white">IMDb Rating</option>
+                        <option value="likes" class="bg-black text-white">YTS Likes</option>
+                        <option value="rt_audience" class="bg-black text-white">RTS Audience</option>
+                        <option value="alphabetical" class="bg-black text-white">Alphabetical</option>
+                        <option value="downloads" class="bg-black text-white">Downloads</option>
+                    </select>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <!-- movies list -->
+        <div
+            class="fetchdata bg-[#1d1d1d] h-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 px-4 md:px-10 gap-6">
+
+        </div>
+
+
+
+       
+<div class="bg-black flex flex-wrap justify-center items-center gap-4 p-4">
+
+    <button onclick="firstPage()"
+        class="text-gray-400 font-semibold text-lg w-16 h-10 mt-20 bg-gray-200 rounded-lg">
+        First
+    </button>
+
+    <button onclick="previousPage()"
+        class="text-gray-400 font-semibold text-lg w-16 h-10 mt-20 bg-gray-200 rounded-lg">
+        Prev
+    </button>
+
+    <div id="pageButtons" class="flex flex-wrap justify-center items-center gap-2">
+    </div>
+
+    <button id="lastPageBtn" onclick="lastPage()"
+        class="text-green-500 font-semibold text-lg w-32 h-10 mt-20 bg-white hover:bg-green-500 hover:text-white rounded-lg">
+        Last Page
+    </button>
+
+    <button onclick="nextPage()"
+        class="text-green-500 font-semibold text-lg w-16 h-10 mt-20 bg-white hover:bg-green-500 hover:text-white rounded-lg">
+        Next
+    </button>
+
+</div>
+
+        <!--footer-->
+        <footer class="bg-black w-full min-h-12 py-4 flex items-center justify-center">
+
+            <nav id="pagination" class="flex flex-wrap items-center justify-center gap-2 px-4 w-full max-w-5xl">
+
+            </nav>
+
+        </footer>
+
+
+
+    </div>
+
+
+</body>
+<script src="script.js"></script>
+
+</html>
